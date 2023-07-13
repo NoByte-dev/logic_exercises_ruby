@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
-options = ['imc', 'tabuada', 'par ou impar', 'juros simples','elevado',
-           'juros compostos', 'apertos de mão', 'multiplicação',
-           'decimal para binario', 'binário para decimal', 'fibonacci',
-           'fatorial' ]
+options = [
+  'IMC', 'Tabuada', 'Par ou Ímpar', 'Juros simples','Elevado',
+  'Juros compostos', 'Apertos de mãos', 'Multiplicação',
+  'Decimal para Binário', 'Binário para Decimal', 'Fibonacci',
+  'Fatorial'
+  ]
 
 options.unshift 'Todos os testes'
-options.unshift 'sair'
+options.unshift 'Sair'
 continue = true
 
 title = <<-EOF
@@ -27,7 +29,7 @@ def call_test(file)
   send(file)
   puts '----------------------------------'
 
-  puts 'repeat test? (N/y)'
+  puts 'Deseja repetir os testes ? (N/Y)'
   repeat = gets.chomp
   call_test(file) if repeat == 'y'
 end
@@ -39,7 +41,7 @@ def call_all_tests
 
   puts '----------------------------------'
 
-  puts 'repeat test? (N/y)'
+  puts 'Deseja repetir os testes ? (N/Y)'
   repeat = gets.chomp
   call_all_tests if repeat == 'y'
 end
@@ -47,26 +49,25 @@ end
 while continue
   system('clear')
   puts title
-  puts "\n\n  Escolha um teste(digite o numero e depois enter)\n\n"
+  puts "Escolha um teste digitando o número correspondente:\n\n"
 
   options.each.with_index{|option,index| puts "  #{index} - #{option}" }
 
   option = gets.chomp.to_i
 
-  call_test('imc')                  if option == options.index('imc')
-  call_test('multiplication_table') if option == options.index('tabuada')
-  call_test('even_or_odd')          if option == options.index('par ou impar')
-  call_test('simple_interest')      if option == options.index('juros simples')
-  call_test('at_power')             if option == options.index('elevado')
-  call_test('compound_interest')    if option == options.index('juros compostos')
-  call_test('handshake')            if option == options.index('apertos de mão')
-  call_test('multiplication')       if option == options.index('multiplicação')
-  call_test('dec_to_bin')           if option == options.index('decimal para binario')
-  call_test('bin_to_dec')           if option == options.index('binário para decimal')
-  call_test('fibonacci')            if option == options.index('fibonacci')
-  call_test('factorial')            if option == options.index('fatorial')
+  call_test('imc')                  if option == options.index('IMC')
+  call_test('multiplication_table') if option == options.index('Tabuada')
+  call_test('even_or_odd')          if option == options.index('Par ou Ímpar')
+  call_test('simple_interest')      if option == options.index('Juros simples')
+  call_test('at_power')             if option == options.index('Elevado')
+  call_test('compound_interest')    if option == options.index('Juros compostos')
+  call_test('handshake')            if option == options.index('Apertos de mãos')
+  call_test('multiplication')       if option == options.index('Multiplicação')
+  call_test('dec_to_bin')           if option == options.index('Decimal para Binário')
+  call_test('bin_to_dec')           if option == options.index('Binário para Decimal')
+  call_test('fibonacci')            if option == options.index('Fibonacci')
+  call_test('factorial')            if option == options.index('Fatorial')
   call_all_tests                    if option == options.index('Todos os testes')
-
 
   continue = false if option.zero?
 end
