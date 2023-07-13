@@ -1,7 +1,5 @@
 class Fibonacci
   def self.calculate(number)
-    #your code here \/ \/ \/
-
-    #your code here /\ /\ /\
+    number < 2 ? number : calculate(number - 1) + calculate(number - 2)
   end
 end
