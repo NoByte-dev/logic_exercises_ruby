@@ -18,14 +18,14 @@ RSpec.describe DecToBin do
   context 'when input 20' do
     it 'has to output 10100' do
       result = DecToBin.convert(20)
-      expect(result).to eql(10100)
+      expect(result).to eql(10_100)
     end
   end
 
   context 'when input 2001' do
     it 'has to output 11111010001' do
       result = DecToBin.convert(2001)
-      expect(result).to eql(11111010001)
+      expect(result).to eql(11_111_010_001)
     end
   end
 end
